@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import Header from './components/header/Header'
+import NavBar from './components/NavBar/NavBar'
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   return (
       <div>
-        <Header/>
+        <NavBar/>
       </div>
   )
 }
