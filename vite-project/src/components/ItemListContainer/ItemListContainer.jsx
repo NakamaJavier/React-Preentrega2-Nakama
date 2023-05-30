@@ -1,4 +1,3 @@
-import React from 'react'
 import "./itemlistcontainer.css"
 
 function ItemListContainer({ greeting }) {
