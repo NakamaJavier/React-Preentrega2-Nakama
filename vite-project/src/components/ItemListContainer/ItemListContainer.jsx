@@ -1,6 +1,12 @@
 import "./itemlistcontainer.css"
-
+import React, {useState, useEffect} from 'react'
 function ItemListContainer({ greeting }) {
+
+    const [users, setUsers] = useState([])
+    useEffect(() =>{
+        setTimeout(()=>console.log("caca"),2000)
+    })
+    
     return (
         <div className="card" style={{ width: "18rem" }}>
             <img src="/img/bienvenido.webp" className="card-img-top" alt="..." />
