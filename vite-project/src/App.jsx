@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 
 // Components
 import NavBar from './components/NavBar/NavBar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 // Views
 import Home from "./views/HomePage"
@@ -26,7 +25,6 @@ function App() {
           <Route path="/detail/:id" element={<DetailPage/>}/>
           <Route path="*" element={<ErrorPage />}/>
         </Routes>
-        <ItemListContainer/>
       </div>
     </Router>
   )

@@ -5,4 +5,9 @@
 
 .body {
   background-color: #002da81e;
+  padding-bottom: 10px;
+}
+
+a{
+  text-decoration: none;
 }

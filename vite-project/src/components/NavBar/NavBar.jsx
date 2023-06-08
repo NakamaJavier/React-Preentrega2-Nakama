@@ -16,7 +16,7 @@ function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <Link to="/" className="nav-item">
-                                <span className="nav-link" aria-current="page" >Inicio</span>
+                                <span className="nav-link" aria-current="page" >Catalogo</span>
                             </Link>
                             <Link to="/about" className="nav-item">
                                 <span className="nav-link" >Nosotros</span>

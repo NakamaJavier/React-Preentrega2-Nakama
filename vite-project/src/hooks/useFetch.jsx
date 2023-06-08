@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react'
 function useFetch(url) {
     const [data,setData] = useState(null)
     const [loading, setLoading] = useState(false)
-
+    const [isMounted, setIsMounted] = useState(true);
     async function fetchData(link) {
         try{
             const response = await fetch(link)
@@ -23,11 +23,14 @@ function useFetch(url) {
         setLoading(true)
         setTimeout(async () => {
             const fetchedData = await fetchData(url)
-            setData(fetchedData)
-            setLoading(false)
+            if(isMounted){
+                setData(fetchedData)
+                setLoading(false)
+            }
         },0) //si se cambia el valor del 0 se puede simular un retardo en la request
-    },[url])
-
+        return (()=>{
+            setIsMounted(false)})
+    },[url,isMounted])
     return {data, loading}
 
 }
