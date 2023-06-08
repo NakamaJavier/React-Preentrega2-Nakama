@@ -2,7 +2,7 @@ import {useState,useEffect} from 'react'
 
 function useFetch(url) {
     const [data,setData] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     async function fetchData(link) {
         try{
@@ -11,18 +11,21 @@ function useFetch(url) {
                 throw new Error("Error en la respuesta de la API")
             }
             const data = await response.json()
+            if (!data) {
+                throw new Error("Error al parsear los datos");
+            }
             return data
         } catch(error){
             console.log("Error al obtener los datos:",error.message)
         }
     }
     useEffect(()=>{
-        const fetchDataAsync = async () => {
+        setLoading(true)
+        setTimeout(async () => {
             const fetchedData = await fetchData(url)
             setData(fetchedData)
             setLoading(false)
-        }
-        fetchDataAsync();
+        },0) //si se cambia el valor del 0 se puede simular un retardo en la request
     },[url])
 
     return {data, loading}

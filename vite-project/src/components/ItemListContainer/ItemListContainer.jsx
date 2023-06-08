@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import "./itemlistcontainer.css"
 import Product from "../Product/Product";
 import useFetch from "../../hooks/useFetch";
-
+import {Link} from "react-router-dom"
 
 function ItemListContainer() {
 
-    // useEffect(()=>{
-    // fetch("./productos.json")
-    //     .then((response)=>response.json())
-    //     .then((data)=> setProducts(data))
-    // },[])
-    const {data:products,loading}= useFetch ("./productos.json")
-    console.log(products);
+
+    const {data:products,loading}= useFetch ("https://pokeapi.co/api/v2/pokemon/")
+    if(loading) return <div>Loading...</div>
+    console.log(products?.results)
     return (
+        
         <div className="contenedor d-flex justify-content-start flex-wrap  gap-3">
         {products &&
-            products.map((product)=>{
+            products.map((product,indice)=>{
                 return(
-                    <Product data={product} key={product.id}/>
+                    <div  key={indice}>
+                        <Link to={`/detail/${indice}`}>
+                            <Product data={product}/>
+                        </Link>
+                    </div>
                 )
             })}
         </div>
