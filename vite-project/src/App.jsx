@@ -6,11 +6,12 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import NavBar from './components/NavBar/NavBar'
 
 // Views
-import Home from "./views/HomePage"
-import About from "./views/AboutPage"
-import Contact from "./views/ContactPage"
+import HomePage from "./views/HomePage"
+import AboutPage from "./views/AboutPage"
+import ContactPage from "./views/ContactPage"
 import ErrorPage from "./views/ErrorPage"
 import DetailPage from './views/DetailPage'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
 
@@ -19,10 +20,11 @@ function App() {
       <div className='body'>
           <NavBar/>
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/about" element={<About />}/>
-          <Route path="/contact" element={<Contact />}/>
+          <Route path="/" element={<HomePage />}/>
+          <Route path="/about" element={<AboutPage />}/>
+          <Route path="/contact" element={<ContactPage />}/>
           <Route path="/detail/:id" element={<DetailPage/>}/>
+          <Route path="/types/:typeValue" element={<ItemListContainer/>}/>
           <Route path="*" element={<ErrorPage />}/>
         </Routes>
       </div>

@@ -10,7 +10,7 @@ function ItemDetail({data}) {
                         <strong>{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</strong>
                     </h4>
                     <p className="card-text ml8px">
-                    <strong>ID: #</strong> {data.order}<br/>
+                    <strong>ID: #</strong> {data.id}<br/>
                     <strong>Tipo:</strong> {data.types.map((type)=>type.type.name).join(", ")} <br />
                     <strong>Peso:</strong> {data.weight}<br/>
                     <strong>Altura:</strong> {data.height}

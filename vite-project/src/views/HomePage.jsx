@@ -3,7 +3,7 @@ import ItemListContainer from '../components/ItemListContainer/ItemListContainer
 
 function HomePage() {
   return (
-    <div>
+    <div className="d-flex justify-content-start flex-wrap">
       <ItemListContainer/>
     </div>
   )
